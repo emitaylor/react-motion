@@ -36,11 +36,30 @@ const App = () => {
             animate={{ opacity:1, y: 0 }}
             transition={{ duration:1, ease: "easeOut", delay: 0.2 }}
           />
-          <motion.div className="w-20 h-20 bg-stone-100 rounded-full" initial />
+          <motion.div
+          className="w-20 h-20 bg-stone-100 rounded-full"
+          initial={{opacity: 0, y: -100 }}
+          animate={{opacity: 1, y: 0 }} 
+          transition={{ duration:1, ease: "easeOut", delay: 0.4 }} />
       </motion.div>
+      {/* Shape Shifting */}
       <motion.div
         variants={ gridSquareVariants }
         className="bg-slate-800 aspect-square rounded-lg justify-center flex items-center gap-10">
+          <motion.div
+            className="w-1/3 h-1/3 shadow-md bg-rose-400"
+            animate={{
+              scale: [1, 2, 2, 1],
+              rotate: [0, 90, 90, 0],
+              borderRadius: ["10%", "10%", "50%", "10%"],
+            }}
+            transition={{
+              duration: 5,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatDelay: 1,
+            }}
+          />
       </motion.div>
 
       <motion.div
